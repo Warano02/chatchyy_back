@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://23-11-2025-gain.vercel.app/",
     credentials: true,
   })
 );
