@@ -18,16 +18,16 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://23-11-2025-gain.vercel.app/",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://23-11-2025-gain.vercel.app/",
+//     credentials: true,
+//   })
+// );
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
-
+app.use("/",(req,res)=>res.json({error:false,msg:"Welcome to the messaging api"}))
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
