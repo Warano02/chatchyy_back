@@ -14,9 +14,6 @@ dotenv.config();
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
 
-app.use(express.json());
-app.use(cookieParser());
-
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://chatchyy.vercel.app"],
@@ -25,6 +22,9 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+app.use(express.json());
+app.use(cookieParser());
+
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
