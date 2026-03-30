@@ -19,14 +19,13 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://26-11-2025-gain.vercel.app", // 🚀 sans slash !
+    origin: ["http://localhost:5173", "https://chatchyy.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// Fix Render cookie
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   next();
